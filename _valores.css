@@ -1,0 +1,66 @@
+/* Valores de los servicios de IA: hero corto con foto del reel, menú de piezas por familia y calculadora con tres precios. */
+.hero--v{background:#070D1A;min-height:min(78svh,760px);display:flex;flex-direction:column}
+.hero--v .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero--v::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(7,13,26,.65) 0%,rgba(7,13,26,.15) 40%,rgba(7,13,26,.9) 100%)}
+.hero--v .hero__inner{flex:1;display:flex;flex-direction:column;width:100%}
+.hero--v .hero__body{margin-top:auto;padding-top:80px}
+.hero--v .hero__title{font-size:clamp(40px,6.4vw,88px)}
+.hero--v .hero__title .grad{display:block}
+.hero--v + .light{margin-top:0}
+.hero--v .hero__sub{max-width:54ch}
+.hero__cta{display:inline-flex;align-items:center;gap:10px;margin-top:26px;padding:14px 22px;border-radius:999px;background:#fff;color:var(--hero);font-weight:700;font-size:15px;text-decoration:none}
+.hero__cta:hover{background:var(--green-br)}
+
+.promo{margin-top:40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.promo>div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px;display:grid;gap:8px;align-content:start;min-width:0}
+.promo .tk{color:var(--label)}
+.promo b.num{font-size:clamp(30px,3.4vw,42px);font-weight:800;line-height:1.1}
+.promo p{font-size:14.5px;color:var(--muted);line-height:1.55}
+.promo .was b.num{color:var(--label);text-decoration:line-through;text-decoration-thickness:2px}
+.promo .on{background:var(--hero);border-color:var(--hero);color:#fff}
+.promo .on .tk{color:var(--green-br)}
+.promo .on b.num{color:var(--green-br)}
+.promo .on p{color:#C3D0E4}
+
+.keep{margin-top:22px;border-radius:14px;padding:22px 26px;background:linear-gradient(96deg,rgba(57,194,94,.14),rgba(84,160,228,.14));border:1px solid rgba(47,168,79,.35);display:grid;gap:4px}
+.keep b{font-size:17px}
+.keep p{font-size:15px;color:var(--muted);line-height:1.55}
+
+.fams{margin-top:40px;display:grid;gap:22px}
+.fam{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:grid;grid-template-columns:260px minmax(0,1fr)}
+.fam__img{position:relative;min-height:180px;background:var(--hero)}
+.fam__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fam__body{padding:22px 26px 10px;min-width:0}
+.fam__h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.fam__h h3{font-size:clamp(20px,2.2vw,26px);font-weight:800;letter-spacing:-.01em}
+.fam__h a{font-size:13px;font-weight:700;color:var(--blue);text-decoration:none;white-space:nowrap}
+.fam__d{font-size:14px;color:var(--muted);margin-top:4px}
+.rows{margin-top:10px}
+.rows__h,.row{display:grid;grid-template-columns:minmax(0,1fr) 54px 96px 96px;gap:12px;align-items:baseline}
+.rows__h{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--label);padding:8px 0}
+.rows__h span:not(:first-child),.row>span{text-align:right}
+.row{padding:12px 0;border-top:1px solid var(--line)}
+.row b{display:block;font-size:15px}
+.row small{display:block;font-size:13px;color:var(--muted);line-height:1.45}
+.row>span{font-size:15px;font-weight:600;white-space:nowrap}
+.row>span.cr{color:var(--label);font-weight:700;font-size:14px}
+.row>span.pl{color:var(--green);font-weight:800}
+
+.apart{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.apart li{background:#fff;padding:22px 24px;display:grid;gap:4px;align-content:start;min-width:0}
+.apart b{font-size:17px}
+.apart span{font-size:14px;color:var(--muted);line-height:1.5}
+
+.sum__row b.strike2{color:#9DB0CC;text-decoration:line-through;font-size:20px}
+
+@media (max-width:860px){
+  .promo,.apart{grid-template-columns:minmax(0,1fr)}
+  .fam{grid-template-columns:minmax(0,1fr)}
+  .fam__img{min-height:160px}
+}
+@media (max-width:560px){
+  .rows__h,.row{grid-template-columns:minmax(0,1fr) 72px 72px;gap:8px}
+  .rows__h span:nth-child(2),.row>span.cr{display:none}
+  .row>span{font-size:14px}
+  .fam__body{padding:18px 16px 6px}
+}
