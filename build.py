@@ -57,6 +57,13 @@ def usd(n):
 def crs(c):
     return (f"{c:g}".replace(".", ",")) + " cr"
 
+def media(img):
+    """Video en loop si hay un .mp4 con el mismo nombre; si no, la imagen."""
+    mp4 = Path(img).with_suffix(".mp4").name
+    if (H / "img" / mp4).exists():
+        return f'<video src="img/{mp4}" poster="img/{img}" autoplay muted loop playsinline aria-hidden="true"></video>'
+    return f'<img src="img/{img}" alt="" loading="lazy">'
+
 def menu_html():
     out = []
     for fam, img, anchor, desc, items in MENU:
@@ -66,7 +73,7 @@ def menu_html():
             f'<span>{usd(c*PEDIDO)}</span><span class="pl">{usd(c*PLAN20)}</span></div>'
             for t, d, c in items)
         out.append(
-            (f'<article class="fam"><div class="fam__img"><img src="img/{img}" alt="" loading="lazy"></div>' if img
+            (f'<article class="fam"><div class="fam__img">{media(img)}</div>' if img
              else '<article class="fam fam--noimg">') +
             f'<div class="fam__body"><div class="fam__h"><h3>{fam}</h3>{link}</div><p class="fam__d">{desc}</p>'
             f'<div class="rows"><div class="rows__h"><span>Pieza</span><span>Créditos</span><span>Valor</span><span>Plan Mandioca</span></div>{rows}</div></div></article>')
