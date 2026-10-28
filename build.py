@@ -33,11 +33,11 @@ MENU = [
         ("Loop animado de 4 s · simple", "Gráfica simple animada en loop.", 2),
         ("Loop animado de 4 s · avanzado", "Gráfica avanzada animada en loop.", 3),
     ]),
-    ("Avatares digitales", "mariana.jpg", "#avatares", "Avatar de una persona real de la empresa, con su voz, para presentaciones, videos explicativos y campañas.", [
+    ("Avatares digitales", "yt:1yC-11vkWgE", "#avatares", "Avatar de una persona real de la empresa, con su voz, para presentaciones, videos explicativos y campañas.", [
         ("Creación del avatar", "Grabación base de la persona, entrenamiento del avatar y clon de voz. Se paga una sola vez, al inicio.", 10),
         ("Video con avatar de hasta 60 s", "Con el avatar ya creado. Guion, locución con la voz del avatar, edición con gráficos y subtítulos.", 8),
     ]),
-    ("Edición con material de la marca", "yt:1yC-11vkWgE", "", "La marca graba el material, por ejemplo al líder de la empresa, y Samsa lo edita con motion graphics, gráficos y textos, potenciado con IA. Si Samsa debe conseguir o producir el material, se cotiza por pedido. Todos los videos incluyen guion escrito con ustedes, portada y una adaptación.", [
+    ("Edición con material de la marca", None, "", "La marca graba el material, por ejemplo al líder de la empresa, y Samsa lo edita con motion graphics, gráficos y textos, potenciado con IA. Si Samsa debe conseguir o producir el material, se cotiza por pedido. Todos los videos incluyen guion escrito con ustedes, portada y una adaptación.", [
         ("Video editado de hasta 45 s", "Guion, edición con motion graphics, textos y música.", 4),
         ("Video editado de 1 a 2 min", "Guion, edición con motion graphics, textos, transiciones y música.", 7),
         ("Video editado de 3 a 4 min", "Para presentaciones o videos institucionales. Guion, edición con motion graphics, textos, transiciones y música.", 10),
@@ -61,7 +61,7 @@ def media(img):
     if img.startswith("yt:"):
         v = img[3:]
         return (f'<iframe src="https://www.youtube-nocookie.com/embed/{v}?autoplay=1&mute=1&loop=1&playlist={v}&controls=0&playsinline=1&rel=0" '
-                'title="Reel Growie" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media; picture-in-picture" loading="lazy"></iframe>')
+                'title="Reel Growie" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media; picture-in-picture"></iframe>')
     mp4 = Path(img).with_suffix(".mp4").name
     if (H / "img" / mp4).exists():
         return f'<video src="img/{mp4}" poster="img/{img}" autoplay muted loop playsinline aria-hidden="true"></video>'
@@ -75,13 +75,11 @@ def menu_html():
             f'<div class="row"><div><b>{t}</b><small>{d}</small></div><span class="cr">{crs(c)}</span>'
             f'<span>{usd(c*PEDIDO)}</span><span class="pl">{usd(c*PLAN20)}</span></div>'
             for t, d, c in items)
-        n = f"{len(items)} piezas" if len(items) > 1 else "1 pieza"
-        meta = f"{n} · desde {usd(min(c for *_, c in items)*PLAN20)} con el plan Mandioca"
         out.append(
-            f'<details class="fold fam"><summary><b>{fam}</b><span class="fold__n">{meta}</span></summary>'
+            '<article class="fam">'
             + (f'<div class="fam__in"><div class="fam__img">{media(img)}</div>' if img else '<div class="fam__in fam--noimg">') +
-            f'<div class="fam__body"><div class="fam__h"><p class="fam__d">{desc}</p>{link}</div>'
-            f'<div class="rows"><div class="rows__h"><span>Pieza</span><span>Créditos</span><span>Valor</span><span>Plan Mandioca</span></div>{rows}</div></div></div></details>')
+            f'<div class="fam__body"><div class="fam__h"><h3>{fam}</h3>{link}</div><p class="fam__d">{desc}</p>'
+            f'<div class="rows"><div class="rows__h"><span>Pieza</span><span>Créditos</span><span>Valor</span><span>Plan Mandioca</span></div>{rows}</div></div></div></article>')
     return "\n".join(out)
 
 calc = [[fam, t, d, c] for fam, _, _, _, items in MENU for t, d, c in items]
