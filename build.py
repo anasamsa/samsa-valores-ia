@@ -16,9 +16,9 @@ MINIMO = 20                                 # créditos al mes en el plan = USD 
 # familia, imagen, ancla en la landing de IA, descripción, [(pieza, detalle, créditos)]
 MENU = [
     ("Motion graphics con IA", "ejemplo-ionava-wallet.jpg", "#videos", "IA entrenada con la marca y motion graphics: tipografía en movimiento, íconos y pantallas. Para orgánico y pauta en Instagram y LinkedIn. Cada pieza incluye copy, música y se entrega en dos formatos, por ejemplo 9:16 y 1:1.", [
-        ("Cápsula animada · simple", "Escenas simples, hasta 20 s.", 3),
-        ("Cápsula animada · avanzada", "Movimiento diseñado para el mensaje, de 60 a 90 s, con la voz en off que envíe la marca.", 6),
-        ("Video explicativo de hasta 90 s", "Sobre un producto o servicio. Se entrega en cápsulas independientes, una por cada momento de los 90 s, para publicar por separado. Key visual, guion, video vertical y horizontal, locución con IA, música y efectos.", 15),
+        ("Cápsula animada simple · corta", "Escenas simples con música, hasta 20 s.", 3),
+        ("Cápsula animada simple · larga", "Escenas simples con música, de 30 a 60 s.", 8),
+        ("Video explicativo de hasta 90 s", "Sobre un producto o servicio. Se entrega el video completo y, por separado, una cápsula por cada tema, para publicar sola. Key visual, guion, video vertical y horizontal, locución con IA, música y efectos.", 15),
     ]),
     ("Video generado con IA", "ref-louisville.jpg", "#videos", "Planos generados con IA: producto, acciones y escenas con personajes. Para orgánico y pauta en Instagram y LinkedIn. Cada pieza incluye copy, música y se entrega en dos formatos, por ejemplo 9:16 y 1:1.", [
         ("Video de hasta 30 s · simple", "Hasta 6 planos, cortes directos y gráficos 2D. Para mostrar producto o una acción.", 7),
@@ -72,11 +72,13 @@ def menu_html():
             f'<div class="row"><div><b>{t}</b><small>{d}</small></div><span class="cr">{crs(c)}</span>'
             f'<span>{usd(c*PEDIDO)}</span><span class="pl">{usd(c*PLAN20)}</span></div>'
             for t, d, c in items)
+        n = f"{len(items)} piezas" if len(items) > 1 else "1 pieza"
+        meta = f"{n} · desde {usd(min(c for *_, c in items)*PLAN20)} con el plan Mandioca"
         out.append(
-            (f'<article class="fam"><div class="fam__img">{media(img)}</div>' if img
-             else '<article class="fam fam--noimg">') +
-            f'<div class="fam__body"><div class="fam__h"><h3>{fam}</h3>{link}</div><p class="fam__d">{desc}</p>'
-            f'<div class="rows"><div class="rows__h"><span>Pieza</span><span>Créditos</span><span>Valor</span><span>Plan Mandioca</span></div>{rows}</div></div></article>')
+            f'<details class="fold fam"><summary><b>{fam}</b><span class="fold__n">{meta}</span></summary>'
+            + (f'<div class="fam__in"><div class="fam__img">{media(img)}</div>' if img else '<div class="fam__in fam--noimg">') +
+            f'<div class="fam__body"><div class="fam__h"><p class="fam__d">{desc}</p>{link}</div>'
+            f'<div class="rows"><div class="rows__h"><span>Pieza</span><span>Créditos</span><span>Valor</span><span>Plan Mandioca</span></div>{rows}</div></div></div></details>')
     return "\n".join(out)
 
 calc = [[fam, t, d, c] for fam, _, _, _, items in MENU for t, d, c in items]

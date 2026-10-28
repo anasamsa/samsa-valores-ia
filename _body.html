@@ -68,7 +68,7 @@
     <div class="fams">
 {{MENU}}
     </div>
-    <div class="keep"><b>Adaptaciones para otras versiones</b><p>Cada pieza madre incluye una adaptación. Las versiones adicionales, para otra red, formato, idioma o mercado, valen un porcentaje de los créditos de la pieza madre: 25% hasta 10 adaptaciones, 17% de 11 a 30 y 10% desde 31. Por ejemplo, una cápsula animada simple vale 3 créditos y cada adaptación 0,75.</p></div>
+    <div class="keep"><b>Adaptaciones para otras versiones</b><p>Cada pieza madre incluye una adaptación. Las versiones adicionales, para otra red, formato, idioma o mercado, valen un porcentaje de los créditos de la pieza madre: 25% hasta 10 adaptaciones, 17% de 11 a 30 y 10% desde 31. Por ejemplo, una cápsula animada simple corta vale 3 créditos y cada adaptación 0,75.</p></div>
   </div>
 </section>
 
@@ -76,7 +76,13 @@
   <div class="wide">
     <p class="seclabel">04 · Calculadora</p>
     <h2 class="bigt">Arma <span class="grad">un mes del plan</span></h2>
-    <p class="subd">Suma las piezas de un mes. Viene cargada con un ejemplo de USD 2.000: 4 videos cortos y 3 piezas gráficas para la parrilla del mes, cada una en dos formatos para Instagram y LinkedIn.</p>
+    <p class="subd">Con USD 2.000 al mes, que son 20 créditos, alcanza por ejemplo para cualquiera de estas opciones. Elige una y ajústala, o arma tu mes desde cero. Cada pieza se entrega en dos formatos, para Instagram y LinkedIn.</p>
+    <div class="presets" id="presets">
+      <button type="button" data-p="0"><b>4 videos cortos</b> y 3 piezas gráficas</button>
+      <button type="button" data-p="1"><b>6 cápsulas animadas cortas</b> y 2 piezas gráficas</button>
+      <button type="button" data-p="2"><b>2 cápsulas animadas largas</b> y 2 carruseles</button>
+      <button type="button" data-p="3"><b>1 video explicativo</b> y 5 piezas gráficas</button>
+    </div>
     <div class="calc2">
       <div class="menu2" id="menu"></div>
       <aside class="sum" aria-live="polite">
@@ -123,7 +129,8 @@
 (function(){
   var M={{CALC}};
   var P=125,P15=112.5,P20=100,MIN=20;
-  var DEF={0:3,3:1,6:2,7:1};
+  var PRE=[{0:3,3:1,6:2,7:1},{0:6,6:2},{1:2,8:2},{2:1,6:5}], DEF=PRE[0];
+  var pres=document.getElementById("presets");
   var q={}, menu=document.getElementById("menu"), fam="";
   var fmt=function(n){return "USD "+Math.round(n).toLocaleString("es-CO");};
   var crf=function(c){return String(c).replace(".",",");};
@@ -133,7 +140,7 @@
     r.innerHTML='<div class="item__t"><b>'+it[1]+'</b><span>'+it[2]+'</span></div><div class="item__cr num">'+crf(it[3])+' cr</div><div class="qty"><button type="button" aria-label="Quitar '+it[1]+'" data-i="'+i+'" data-d="-1">−</button><output id="q'+i+'">0</output><button type="button" aria-label="Sumar '+it[1]+'" data-i="'+i+'" data-d="1">+</button></div>';
     menu.appendChild(r);
   });
-  function set(o){q={};for(var k in o)q[k]=o[k];render();}
+  function set(o,b){q={};for(var k in o)q[k]=o[k];render();[].forEach.call(pres.children,function(x){x.classList.toggle("on",x===b);});}
   function render(){
     var cr=0;
     M.forEach(function(it,i){var n=q[i]||0;cr+=n*it[3];var o=document.getElementById("q"+i);o.textContent=n;o.parentNode.parentNode.classList.toggle("on",n>0);});
@@ -151,8 +158,9 @@
     else note="Supera el mínimo de "+MIN+" créditos: los "+crf(Math.round((cr-MIN)*10)/10)+" créditos extra se pagan a USD 100.";
     document.getElementById("c-note").textContent=note;
   }
-  menu.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var i=+b.dataset.i;q[i]=Math.max(0,(q[i]||0)+(+b.dataset.d));render();});
-  document.getElementById("c-reset").addEventListener("click",function(){set(DEF);});
-  set(DEF);
+  menu.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var i=+b.dataset.i;q[i]=Math.max(0,(q[i]||0)+(+b.dataset.d));render();[].forEach.call(pres.children,function(x){x.classList.remove("on");});});
+  pres.addEventListener("click",function(e){var b=e.target.closest("button");if(b)set(PRE[+b.dataset.p],b);});
+  document.getElementById("c-reset").addEventListener("click",function(){set(DEF,pres.children[0]);});
+  set(DEF,pres.children[0]);
 })();
 </script>
