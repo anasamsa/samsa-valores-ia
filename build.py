@@ -18,7 +18,7 @@ MENU = [
     ("Motion graphics con IA", "ejemplo-ionava-wallet.jpg", "#videos", "IA entrenada con la marca y motion graphics: tipografía en movimiento, íconos y pantallas. Para orgánico y pauta en Instagram y LinkedIn. Cada pieza incluye copy, música y se entrega en dos formatos, por ejemplo 9:16 y 1:1.", [
         ("Cápsula animada · simple", "Escenas simples, hasta 20 s.", 3),
         ("Cápsula animada · avanzada", "Movimiento diseñado para el mensaje, de 60 a 90 s, con la voz en off que envíe la marca.", 6),
-        ("Video explicativo de hasta 90 s", "Sobre un producto o servicio, dividido en cápsulas por tema. Key visual, guion, video vertical y horizontal, locución con IA, música y efectos.", 20),
+        ("Video explicativo de hasta 90 s", "Sobre un producto o servicio. Se entrega en cápsulas independientes, una por cada momento de los 90 s, para publicar por separado. Key visual, guion, video vertical y horizontal, locución con IA, música y efectos.", 15),
     ]),
     ("Video generado con IA", "ref-louisville.jpg", "#videos", "Planos generados con IA: producto, acciones y escenas con personajes. Para orgánico y pauta en Instagram y LinkedIn. Cada pieza incluye copy, música y se entrega en dos formatos, por ejemplo 9:16 y 1:1.", [
         ("Video de hasta 30 s · simple", "Hasta 6 planos, cortes directos y gráficos 2D. Para mostrar producto o una acción.", 7),
