@@ -16,7 +16,7 @@ MINIMO = 20                                 # créditos al mes en el plan = USD 
 # familia, imagen, ancla en la landing de IA, descripción, [(pieza, detalle, créditos)]
 MENU = [
     ("Motion graphics con IA", "ejemplo-ionava-wallet.jpg", "#videos", "IA entrenada con la marca y motion graphics: tipografía en movimiento, íconos y pantallas. Para orgánico y pauta en Instagram y LinkedIn. Cada pieza incluye copy, música y se entrega en dos formatos, por ejemplo 9:16 y 1:1.", [
-        ("Cápsula animada simple · corta", "Escenas simples con música, hasta 20 s.", 3),
+        ("Cápsula animada simple · corta", "Escenas simples con música, hasta 20 s.", 4),
         ("Cápsula animada simple · larga", "Escenas simples con música, de 30 a 60 s.", 8),
         ("Video explicativo de hasta 90 s", "Sobre un producto o servicio. Se entrega el video completo y, por separado, una cápsula por cada tema, para publicar sola. Key visual, guion, video vertical y horizontal, locución con IA, música y efectos.", 15),
     ]),
@@ -26,12 +26,12 @@ MENU = [
         ("Video explicativo de hasta 90 s", "Con personajes, ilustraciones y escenas generados con IA, dividido en cápsulas por tema. Key visual, guion visual, video vertical y horizontal, locución con IA, música y efectos.", 27),
     ]),
     ("Gráfica para redes", "grafica-redes.jpg", "", "Piezas sobre el key visual de la marca, con copy. Cada pieza incluye una adaptación.", [
-        ("Pieza madre gráfica · simple", "Template de imagen y texto.", 1),
-        ("Pieza madre gráfica · avanzada", "Ilustración o gráfica con más desarrollo de concepto.", 2),
-        ("Carrusel de 4 slides", "Estático, con copy.", 2),
-        ("Carrusel de 6 a 8 slides", "Con 1 o 2 slides animadas.", 3),
-        ("Loop animado de 4 s · simple", "Gráfica simple animada en loop.", 2),
-        ("Loop animado de 4 s · avanzado", "Gráfica avanzada animada en loop.", 3),
+        ("Pieza madre gráfica · simple", "Template de imagen y texto.", 1.5),
+        ("Pieza madre gráfica · avanzada", "Ilustración o gráfica con más desarrollo de concepto.", 3),
+        ("Carrusel de 4 slides", "Estático, con copy.", 3),
+        ("Carrusel de 6 a 8 slides", "Con 1 o 2 slides animadas.", 5),
+        ("Loop animado de 4 s · simple", "Gráfica simple animada en loop.", 3),
+        ("Loop animado de 4 s · avanzado", "Gráfica avanzada animada en loop.", 4),
     ]),
     ("Avatares digitales", "yt:1yC-11vkWgE", "#avatares", "Avatar de una persona real de la empresa, con su voz, para presentaciones, videos explicativos y campañas.", [
         ("Creación del avatar", "Grabación base de la persona, entrenamiento del avatar y clon de voz. Se paga una sola vez, al inicio.", 10),

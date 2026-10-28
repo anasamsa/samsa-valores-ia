@@ -68,7 +68,7 @@
     <div class="fams">
 {{MENU}}
     </div>
-    <div class="keep"><b>Adaptaciones para otras versiones</b><p>Cada pieza madre incluye una adaptación. Las versiones adicionales, para otra red, formato, idioma o mercado, valen un porcentaje de los créditos de la pieza madre: 25% hasta 10 adaptaciones, 17% de 11 a 30 y 10% desde 31. Por ejemplo, una cápsula animada simple corta vale 3 créditos y cada adaptación 0,75.</p></div>
+    <div class="keep"><b>Adaptaciones para otras versiones</b><p>Cada pieza madre incluye una adaptación. Las versiones adicionales, para otra red, formato, idioma o mercado, valen un porcentaje de los créditos de la pieza madre: 25% hasta 10 adaptaciones, 17% de 11 a 30 y 10% desde 31. Por ejemplo, una cápsula animada simple corta vale 4 créditos y cada adaptación 1.</p></div>
   </div>
 </section>
 
@@ -89,10 +89,10 @@
         <p class="sum__note" id="c-note"></p>
         <span class="tk presets__t">Ejemplos con USD 2.000 al mes</span>
         <div class="presets" id="presets">
-          <button type="button" data-p="0"><b>4 videos cortos</b> y 3 piezas gráficas</button>
-          <button type="button" data-p="1"><b>6 cápsulas animadas cortas</b> y 2 piezas gráficas</button>
-          <button type="button" data-p="2"><b>2 cápsulas animadas largas</b> y 2 carruseles</button>
-          <button type="button" data-p="3"><b>1 video explicativo</b> y 5 piezas gráficas</button>
+          <button type="button" data-p="0"><b>3 videos cortos</b> y 1 carrusel</button>
+          <button type="button" data-p="1"><b>3 cápsulas animadas cortas</b>, 2 piezas gráficas y 1 carrusel</button>
+          <button type="button" data-p="2"><b>2 cápsulas animadas largas</b> y 1 loop animado</button>
+          <button type="button" data-p="3"><b>1 video explicativo</b> y 1 carrusel</button>
         </div>
       </aside>
     </div>
@@ -129,7 +129,7 @@
 (function(){
   var M={{CALC}};
   var P=125,P15=112.5,P20=100,MIN=20;
-  var PRE=[{0:3,3:1,6:2,7:1},{0:6,6:2},{1:2,8:2},{2:1,6:5}], DEF=PRE[0];
+  var PRE=[{3:1,0:2,9:1},{0:3,6:2,9:1},{1:2,11:1},{2:1,9:1}], DEF=PRE[0];
   var pres=document.getElementById("presets");
   var q={}, menu=document.getElementById("menu"), fam="";
   var fmt=function(n){return "USD "+Math.round(n).toLocaleString("es-CO");};
