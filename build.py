@@ -10,7 +10,7 @@ L = H.parent / "Landing Servicios IA" / "landing"
 css = "\n".join((L / f).read_text() for f in ("_base.css", "_ia.css", "_show.css")) + "\n" + (H / "_valores.css").read_text()
 FONT = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap">\n'
 
-PEDIDO, PLAN10, PLAN20 = 125, 112.5, 100  # valor del crédito, plan de 3 meses (10%) y plan Mandioca (20%), en USD
+PEDIDO, PLAN10, PLAN20 = 125, 113, 100  # valor del crédito, plan de 3 meses (10%) y plan Mandioca (20%), en USD
 MINIMO = 20                                 # créditos al mes en el plan = USD 2.000
 
 # familia, imagen, ancla en la landing de IA, descripción, [(pieza, detalle, créditos)]
