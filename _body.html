@@ -76,13 +76,7 @@
   <div class="wide">
     <p class="seclabel">04 · Calculadora</p>
     <h2 class="bigt">Arma <span class="grad">un mes del plan</span></h2>
-    <p class="subd">Con USD 2.000 al mes, que son 20 créditos, alcanza por ejemplo para cualquiera de estas opciones. Elige una y ajústala, o arma tu mes desde cero. Cada pieza se entrega en dos formatos, para Instagram y LinkedIn.</p>
-    <div class="presets" id="presets">
-      <button type="button" data-p="0"><b>4 videos cortos</b> y 3 piezas gráficas</button>
-      <button type="button" data-p="1"><b>6 cápsulas animadas cortas</b> y 2 piezas gráficas</button>
-      <button type="button" data-p="2"><b>2 cápsulas animadas largas</b> y 2 carruseles</button>
-      <button type="button" data-p="3"><b>1 video explicativo</b> y 5 piezas gráficas</button>
-    </div>
+    <p class="subd">Suma las piezas de un mes o elige uno de los ejemplos de USD 2.000 que están debajo de «Tu mes». Cada pieza se entrega en dos formatos, para Instagram y LinkedIn.</p>
     <div class="calc2">
       <div class="menu2" id="menu"></div>
       <aside class="sum" aria-live="polite">
@@ -93,7 +87,13 @@
         <div class="sum__row big"><span>Plan Mandioca · 20%</span><b class="num" id="c-20">USD 0</b></div>
         <div class="sum__row"><span>Ahorro de Mandioca</span><b class="num ok" id="c-ah">USD 0</b></div>
         <p class="sum__note" id="c-note"></p>
-        <button type="button" class="reset" id="c-reset">Volver al ejemplo</button>
+        <span class="tk presets__t">Ejemplos con USD 2.000 al mes</span>
+        <div class="presets" id="presets">
+          <button type="button" data-p="0"><b>4 videos cortos</b> y 3 piezas gráficas</button>
+          <button type="button" data-p="1"><b>6 cápsulas animadas cortas</b> y 2 piezas gráficas</button>
+          <button type="button" data-p="2"><b>2 cápsulas animadas largas</b> y 2 carruseles</button>
+          <button type="button" data-p="3"><b>1 video explicativo</b> y 5 piezas gráficas</button>
+        </div>
       </aside>
     </div>
   </div>
@@ -160,7 +160,6 @@
   }
   menu.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var i=+b.dataset.i;q[i]=Math.max(0,(q[i]||0)+(+b.dataset.d));render();[].forEach.call(pres.children,function(x){x.classList.remove("on");});});
   pres.addEventListener("click",function(e){var b=e.target.closest("button");if(b)set(PRE[+b.dataset.p],b);});
-  document.getElementById("c-reset").addEventListener("click",function(){set(DEF,pres.children[0]);});
   set(DEF,pres.children[0]);
 })();
 </script>
