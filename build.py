@@ -79,7 +79,7 @@ def menu_html():
             '<article class="fam">'
             + (f'<div class="fam__in"><div class="fam__img">{media(img)}</div>' if img else '<div class="fam__in fam--noimg">') +
             f'<div class="fam__body"><div class="fam__h"><h3>{fam}</h3>{link}</div><p class="fam__d">{desc}</p>'
-            f'<div class="rows"><div class="rows__h"><span>Pieza</span><span>Créditos</span><span>Valor</span><span>Plan Mandioca</span></div>{rows}</div></div></div></article>')
+            f'<div class="rows"><div class="rows__h"><span>Pieza</span><span>Créditos</span><span>Valor por pedido</span><span>Plan Mandioca</span></div>{rows}</div></div></div></article>')
     return "\n".join(out)
 
 calc = [[fam, t, d, c] for fam, _, _, _, items in MENU for t, d, c in items]
