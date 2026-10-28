@@ -10,16 +10,20 @@ L = H.parent / "Landing Servicios IA" / "landing"
 css = "\n".join((L / f).read_text() for f in ("_base.css", "_ia.css", "_show.css")) + "\n" + (H / "_valores.css").read_text()
 FONT = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap">\n'
 
-PEDIDO, PLAN15, PLAN20 = 125, 106.25, 100  # valor del crédito en USD (base: pestaña Sistema Creditos del Sheet)
+PEDIDO, PLAN10, PLAN20 = 125, 112.5, 100  # valor del crédito, plan de 3 meses (10%) y plan Mandioca (20%), en USD
 MINIMO = 20                                 # créditos al mes en el plan = USD 2.000
 
 # familia, imagen, ancla en la landing de IA, descripción, [(pieza, detalle, créditos)]
 MENU = [
-    ("Videos cortos para redes · orgánico y pauta", "natura-consultora.jpg", "#videos", "Piezas para la parrilla de Instagram y LinkedIn. Cada pieza incluye copy y se entrega en dos formatos, por ejemplo 9:16 y 1:1.", [
-        ("Cápsula animada · simple", "Motion graphics con escenas simples, hasta 20 s, con música.", 3),
-        ("Cápsula animada · avanzada", "Movimiento diseñado para el mensaje, de 60 a 90 s, con música y la voz en off que envíe la marca.", 6),
-        ("Video generado con IA de hasta 30 s · simple", "Hasta 6 planos generados con IA, cortes directos, gráficos 2D y música. Para mostrar producto o una acción.", 7),
-        ("Video generado con IA de hasta 30 s · avanzado", "Hasta 8 planos con personajes que interactúan con el producto, transiciones, efectos visuales, música y efectos de sonido.", 12),
+    ("Motion graphics con IA", "ejemplo-ionava-wallet.jpg", "#videos", "IA entrenada con la marca y motion graphics: tipografía en movimiento, íconos y pantallas. Para orgánico y pauta en Instagram y LinkedIn. Cada pieza incluye copy, música y se entrega en dos formatos, por ejemplo 9:16 y 1:1.", [
+        ("Cápsula animada · simple", "Escenas simples, hasta 20 s.", 3),
+        ("Cápsula animada · avanzada", "Movimiento diseñado para el mensaje, de 60 a 90 s, con la voz en off que envíe la marca.", 6),
+        ("Video explicativo de hasta 90 s", "Sobre un producto o servicio, dividido en cápsulas por tema. Key visual, guion, video vertical y horizontal, locución con IA, música y efectos.", 20),
+    ]),
+    ("Video generado con IA", "ref-louisville.jpg", "#videos", "Planos generados con IA: producto, acciones y escenas con personajes. Para orgánico y pauta en Instagram y LinkedIn. Cada pieza incluye copy, música y se entrega en dos formatos, por ejemplo 9:16 y 1:1.", [
+        ("Video de hasta 30 s · simple", "Hasta 6 planos, cortes directos y gráficos 2D. Para mostrar producto o una acción.", 7),
+        ("Video de hasta 30 s · avanzado", "Hasta 8 planos con personajes que interactúan con el producto, transiciones, efectos visuales y efectos de sonido.", 12),
+        ("Video explicativo de hasta 90 s", "Con personajes, ilustraciones y escenas generados con IA, dividido en cápsulas por tema. Key visual, guion visual, video vertical y horizontal, locución con IA, música y efectos.", 27),
     ]),
     ("Gráfica para redes", "natura-mi-consultoria-c11.jpg", "", "Piezas sobre el key visual de la marca, con copy. Cada pieza incluye una adaptación.", [
         ("Pieza madre gráfica · simple", "Template de imagen y texto.", 1),
@@ -29,24 +33,16 @@ MENU = [
         ("Loop animado de 4 s · simple", "Gráfica simple animada en loop.", 2),
         ("Loop animado de 4 s · avanzado", "Gráfica avanzada animada en loop.", 3),
     ]),
+    ("Avatares digitales", "mariana.jpg", "#avatares", "Avatar de una persona real de la empresa, con su voz, para presentaciones, videos explicativos y campañas.", [
+        ("Creación del avatar", "Grabación base de la persona, entrenamiento del avatar y clon de voz. Se paga una vez.", 10),
+        ("Video con avatar de hasta 60 s", "Guion, locución con la voz del avatar, edición con gráficos y subtítulos.", 12),
+    ]),
     ("Edición con material de la marca", None, "", "La marca graba, por ejemplo al líder de la empresa, y Samsa escribe el guion con ustedes y edita con gráficos, textos, transiciones y motion graphics. Incluye portada y una adaptación.", [
         ("Guion de 30 a 60 s", "Escrito con el equipo de la marca antes de grabar.", 3),
         ("Video editado de hasta 45 s", "Edición con gráficos, textos y música.", 3),
         ("Video editado de 1 a 2 min", "Edición con gráficos, textos, transiciones y motion graphics.", 6),
         ("Video editado de 3 a 4 min", "Para presentaciones o videos institucionales.", 9),
         ("Cápsula derivada de 30 a 45 s", "Un corte para redes de un video editado de 1 a 4 min.", 2),
-    ]),
-    ("Video explicativo · Motion graphics", "ref-natura-nequi.jpg", "#videos", "Un video de hasta 90 s sobre un producto o servicio, dividido en cápsulas por tema. Incluye key visual, guion, video vertical y horizontal, locución con IA, música, efectos y dos rondas de ajustes.", [
-        ("Video de hasta 90 s · Motion graphics con IA entrenada", "IA entrenada con la marca y motion graphics: tipografía en movimiento, íconos y pantallas.", 20),
-        ("Cápsula de 10 a 20 s", "Motion graphics sobre el key visual.", 3),
-    ]),
-    ("Video explicativo · IA generativa", "ref-natura-referidos.jpg", "#videos", "El mismo video de hasta 90 s, con personajes, ilustraciones y escenas generados con IA. Incluye key visual, guion visual, video vertical y horizontal, locución con IA, música, efectos y dos rondas de ajustes.", [
-        ("Video de hasta 90 s · Premium con IA generativa", "Motion graphics con personajes, ilustraciones y escenas generados con IA.", 27),
-        ("Cápsula de 10 a 20 s", "Con personajes y escenas generados con IA.", 5),
-    ]),
-    ("Avatares digitales", "mariana.jpg", "#avatares", "Avatar de una persona real de la empresa, con su voz, para presentaciones, videos explicativos y campañas.", [
-        ("Creación del avatar", "Grabación base de la persona, entrenamiento del avatar y clon de voz. Se paga una vez.", 10),
-        ("Video con avatar de hasta 60 s", "Guion, locución con la voz del avatar, edición con gráficos y subtítulos.", 12),
     ]),
     ("Jingles con IA", None, "", "Audio para campañas, videos y redes.", [
         ("Jingle de hasta 30 s", "Letra, música y voz generadas con IA.", 4),
@@ -73,7 +69,7 @@ def menu_html():
             (f'<article class="fam"><div class="fam__img"><img src="img/{img}" alt="" loading="lazy"></div>' if img
              else '<article class="fam fam--noimg">') +
             f'<div class="fam__body"><div class="fam__h"><h3>{fam}</h3>{link}</div><p class="fam__d">{desc}</p>'
-            f'<div class="rows"><div class="rows__h"><span>Pieza</span><span>Créditos</span><span>Por pedido</span><span>Con el plan</span></div>{rows}</div></div></article>')
+            f'<div class="rows"><div class="rows__h"><span>Pieza</span><span>Créditos</span><span>Valor</span><span>Plan Mandioca</span></div>{rows}</div></div></article>')
     return "\n".join(out)
 
 calc = [[fam, t, d, c] for fam, _, _, _, items in MENU for t, d, c in items]
