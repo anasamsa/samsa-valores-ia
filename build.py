@@ -22,8 +22,7 @@ MENU = [
     ]),
     ("Video generado con IA", "ref-louisville.jpg", "#videos", "Planos generados con IA: producto, acciones y escenas con personajes. Para orgánico y pauta en Instagram y LinkedIn. Cada pieza incluye copy, música y se entrega en dos formatos, por ejemplo 9:16 y 1:1.", [
         ("Video de hasta 30 s · simple", "Hasta 6 planos, cortes directos y gráficos 2D. Para mostrar producto o una acción.", 7),
-        ("Video de hasta 30 s · avanzado", "Hasta 8 planos con personajes que interactúan con el producto, transiciones, efectos visuales y efectos de sonido.", 12),
-        ("Video explicativo de hasta 90 s", "Con personajes, ilustraciones y escenas generados con IA, dividido en cápsulas por tema. Key visual, guion visual, video vertical y horizontal, locución con IA, música y efectos.", 27),
+        ("Video de hasta 60 s · avanzado", "Hasta 8 planos con personajes que interactúan con el producto, transiciones, efectos visuales y efectos de sonido.", 12),
     ]),
     ("Gráfica para redes", "grafica-redes.jpg", "", "Piezas sobre el key visual de la marca, con copy. Cada pieza incluye una adaptación.", [
         ("Pieza madre gráfica · simple", "Template de imagen y texto.", 1.5),
