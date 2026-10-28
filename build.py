@@ -33,8 +33,8 @@ MENU = [
         ("Loop animado de 4 s · avanzado", "Gráfica avanzada animada en loop.", 4),
     ]),
     ("Avatares digitales", "yt:1yC-11vkWgE", "#avatares", "Avatar de una persona real de la empresa, con su voz, para presentaciones, videos explicativos y campañas.", [
-        ("Creación del avatar", "Grabación base de la persona, entrenamiento del avatar y clon de voz. Se paga una sola vez, al inicio.", 10),
-        ("Video con avatar de hasta 60 s", "Con el avatar ya creado. Guion, locución con la voz del avatar, edición con gráficos y subtítulos.", 8),
+        ("Creación del avatar", "Grabación base de la persona, entrenamiento del avatar y clon de voz. Se suma una sola vez, al primer video.", 5),
+        ("Video con avatar de hasta 60 s", "Guion, locución con la voz del avatar, edición con gráficos y subtítulos.", 10),
     ]),
     ("Edición con material de la marca", None, "", "La marca graba el material, por ejemplo al líder de la empresa, y Samsa lo edita con motion graphics, gráficos y textos, potenciado con IA. Si Samsa debe conseguir o producir el material, se cotiza por pedido. Todos los videos incluyen guion escrito con ustedes, portada y una adaptación.", [
         ("Video editado de hasta 45 s", "Guion, edición con motion graphics, textos y música.", 4),
