@@ -25,7 +25,7 @@ MENU = [
         ("Video de hasta 30 s · avanzado", "Hasta 8 planos con personajes que interactúan con el producto, transiciones, efectos visuales y efectos de sonido.", 12),
         ("Video explicativo de hasta 90 s", "Con personajes, ilustraciones y escenas generados con IA, dividido en cápsulas por tema. Key visual, guion visual, video vertical y horizontal, locución con IA, música y efectos.", 27),
     ]),
-    ("Gráfica para redes", "natura-mi-consultoria-c11.jpg", "", "Piezas sobre el key visual de la marca, con copy. Cada pieza incluye una adaptación.", [
+    ("Gráfica para redes", "avon-bigfriday-post.jpg", "", "Piezas sobre el key visual de la marca, con copy. Cada pieza incluye una adaptación.", [
         ("Pieza madre gráfica · simple", "Template de imagen y texto.", 1),
         ("Pieza madre gráfica · avanzada", "Ilustración o gráfica con más desarrollo de concepto.", 2),
         ("Carrusel de 4 slides", "Estático, con copy.", 2),
