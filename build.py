@@ -25,7 +25,7 @@ MENU = [
         ("Video de hasta 60 s · avanzado", "Hasta 8 planos con personajes que interactúan con el producto, transiciones, efectos visuales y efectos de sonido.", 12),
     ]),
     ("Gráfica para redes", "grafica-redes.jpg", "", "Piezas sobre el key visual de la marca, con copy. Cada pieza incluye una adaptación.", [
-        ("Pieza madre gráfica · simple", "Template de imagen y texto.", 1.5),
+        ("Pieza madre gráfica · simple", "Template de imagen y texto.", 1),
         ("Pieza madre gráfica · avanzada", "Ilustración o gráfica con más desarrollo de concepto.", 3),
         ("Carrusel de 4 slides", "Estático, con copy.", 3),
         ("Carrusel de 6 a 8 slides", "Con 1 o 2 slides animadas.", 5),
