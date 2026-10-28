@@ -25,7 +25,7 @@ MENU = [
         ("Video de hasta 30 s · avanzado", "Hasta 8 planos con personajes que interactúan con el producto, transiciones, efectos visuales y efectos de sonido.", 12),
         ("Video explicativo de hasta 90 s", "Con personajes, ilustraciones y escenas generados con IA, dividido en cápsulas por tema. Key visual, guion visual, video vertical y horizontal, locución con IA, música y efectos.", 27),
     ]),
-    ("Gráfica para redes", "avon-bigfriday-post.jpg", "", "Piezas sobre el key visual de la marca, con copy. Cada pieza incluye una adaptación.", [
+    ("Gráfica para redes", "grafica-redes.jpg", "", "Piezas sobre el key visual de la marca, con copy. Cada pieza incluye una adaptación.", [
         ("Pieza madre gráfica · simple", "Template de imagen y texto.", 1),
         ("Pieza madre gráfica · avanzada", "Ilustración o gráfica con más desarrollo de concepto.", 2),
         ("Carrusel de 4 slides", "Estático, con copy.", 2),
@@ -34,8 +34,8 @@ MENU = [
         ("Loop animado de 4 s · avanzado", "Gráfica avanzada animada en loop.", 3),
     ]),
     ("Avatares digitales", "mariana.jpg", "#avatares", "Avatar de una persona real de la empresa, con su voz, para presentaciones, videos explicativos y campañas.", [
-        ("Creación del avatar", "Grabación base de la persona, entrenamiento del avatar y clon de voz. Se paga una vez.", 10),
-        ("Video con avatar de hasta 60 s", "Guion, locución con la voz del avatar, edición con gráficos y subtítulos.", 12),
+        ("Creación del avatar", "Grabación base de la persona, entrenamiento del avatar y clon de voz. Se paga una sola vez, al inicio.", 10),
+        ("Video con avatar de hasta 60 s", "Con el avatar ya creado. Guion, locución con la voz del avatar, edición con gráficos y subtítulos.", 8),
     ]),
     ("Edición con material de la marca", None, "", "La marca graba, por ejemplo al líder de la empresa, y Samsa escribe el guion con ustedes y edita con gráficos, textos, transiciones y motion graphics. Incluye portada y una adaptación.", [
         ("Guion de 30 a 60 s", "Escrito con el equipo de la marca antes de grabar.", 3),
