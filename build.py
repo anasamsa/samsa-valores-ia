@@ -43,7 +43,7 @@ MENU = [
         ("Cápsula derivada de 30 a 45 s", "Un corte para redes de un video editado de 1 a 4 min.", 2),
     ]),
     ("Jingles con IA", None, "", "Audio para campañas, videos y redes.", [
-        ("Jingle de hasta 30 s", "Letra, música y voz generadas con IA.", 4),
+        ("Jingle de hasta 60 s", "Letra, música y voz generadas con IA.", 4),
     ]),
 ]
 
